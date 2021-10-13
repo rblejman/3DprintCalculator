@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Print Calculator</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <header>
+        <h1 class="logo">Logo</h1>
+        <input type="checkbox" class="nav-toggle" id="nav-toggle">
+        <label for="nav-toggle" class="nav-toggle-label">
+            <span></span>
+        </label>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="calculator">
+        <h2>Calcula tu impresion</h2>
+        <form class="form">
+            <label for="printer">Elija impresora</label>
+            <input type="text" id="printer">
+            <label for="energy">Elija costo luz en kWh</label>
+            <input type="text" id="energy">
+            <label for="time">Elija duracion impresion</label>
+            <input type="text" id="time">
+            <label for="material">Elija precio material por Kg</label>
+            <input type="text" id="material">
+            <label for="weight">Peso en gramos de la impresion</label>
+            <input type="text" id="weight">
+            <label for="labour">Elija mano obra por hora</label>
+            <input type="text" id="labour">
+            <label for="taxes">Porcentaje de impuestos</label>
+            <input type="text" id="taxes">
+            <label for="margin">Margen de ganancia %</label>
+            <input type="text" id="margin">
+            <input type="submit" class="form__item--btn">
+        </form>
+    </section>
+
+    <footer class="footer">
+        <p>info footer</p>
+    </footer>
+    
+    <script src="/js/3dprintcalc.js"></script>
+</body>
+</html>
