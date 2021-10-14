@@ -1,11 +1,18 @@
-body{
+  body{
+    margin: 0;
     height: 100vh;
     background-color: $background-secondary;
+    
   }
-  
+
+  .calculator{
+    display: grid;
+    place-items: center;
+  }
+
   .form{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 600px;
+    width: 50%;
   }
