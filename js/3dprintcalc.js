@@ -1,8 +1,8 @@
 // Objeto impresora. Su modelo y consumo. Metodo: calcular consumo por el tiempo de impresion. consumo en watts/1000 = Kwh. minutos/60 = horas
 class PrinterModel{
-    constructor(printerModel, printerConsumptionInWatts){
-        this.model = printerModel;
-        this.consumption = printerConsumptionInWatts;
+    constructor(model, consumptionInWatts){
+        this.model = model;
+        this.consumption = consumptionInWatts;
     }
     getEnergyCost(energyPriceInKwh, printTimeInMinutes){
         return energyPriceInKwh * (this.consumption / 1000) * (printTimeInMinutes/60);
@@ -16,18 +16,26 @@ const printers = [
     new PrinterModel("Prusa MK3", 120)
   ];
 
-
-
-// Calcular costo de material. Precio por peso.
-  function calcMaterialCost(price, weight) {
-    console.log(`Costo total material $${price * weight}`);
-    return (price * weight);
+  class setUp{
+    constructor(energyPriceInKwh, printTimeInMinutes, materialPricePerGram, weightInGrams, labourCostInMinutes, taxes, profitMarginPercent ){
+      this.energy = energyPriceInKwh;
+      this.printTime = printTimeInMinutes;
+      this.materialPrice = materialPricePerGram;
+      this.materialWeight = weightInGrams;
+      this.labour = labourCostInMinutes;
+      this.taxes = taxes;
+      this.profit = profitMarginPercent;
+    }
+    calcMaterialCost() {
+      console.log(`Costo total material $${this.materialPrice * this.materialWeight}`);
+      return (this.materialPrice * this.materialWeight);
+    }
+    calcLabourCost() {
+      console.log(`Costo total mano de obra $${this.printTime * this.labour}`);
+      return (this.printTime * this.labour);
+    }
   }
   
-  function calcLabourCost(time, labour) {
-    console.log(`Costo total mano de obra $${time * labour}`);
-    return (time * labour);
-  }
   // Calculo el costo total de la impresion
   function calcTotalCost() {
     return (printers[printerSelect].getEnergyCost(energyPriceInKwh, printTimeInMinutes) + calcMaterialCost(materialPricePerGram, weightInGrams) + calcLabourCost(printTimeInMinutes, labourCostInMinutes) )*taxes;
@@ -37,43 +45,45 @@ const printers = [
     return totalCost*profitMarginPercent;
   }
 
-  // Selecciono Modelo de impresora
-  let printerSelect = parseInt( prompt("Elija impresora 0 = Ender 3   o  1 = Prusa Mk3"));  
-  console.log("Usted a seleccionado: " + printers[printerSelect].model );
-  
-  // Selecciono consumo electrico del hogar
-  let  energyPriceInKwh = parseInt(prompt("Ingrese costo electricidad KWh Ej: 5000"));
-  console.log(`El costo electrico de su casa es de ${energyPriceInKwh} kWh`);
+  function calcular(){
 
-  //Selecciono tiempo de la impresion
-  let printTimeInMinutes = parseInt(prompt("Ingrese tiempo de impresion en Minutos"));
-  console.log(`La impresion dura ${printTimeInMinutes} minutos`);
+    // Selecciono Modelo de impresora
+    let printerSelect = document.getElementById("printer");
+    console.log("Usted a seleccionado: " + printers[printerSelect.value].model );
+    
+    // Selecciono consumo electrico del hogar
+    let  energyPriceInKwh = document.getElementById("energy");
+    console.log(`El costo electrico de su casa es de ${energyPriceInKwh.value} kWh`);
 
-  //Selecciono Precio del Plastico por Kg
-  let materialPricePerGram = parseInt(prompt("Ingrese precio de Kg de Plastico")) /1000;
-  console.log(`El material cuesta $${materialPricePerGram} por gramo.`);  
+    //Selecciono tiempo de la impresion
+    let printTimeInMinutes = document.getElementById("time");
+    console.log(`La impresion dura ${printTimeInMinutes.value} minutos`);
 
-  // Selecciono peso total de material usado
-  let weightInGrams = parseInt(prompt("Ingrese cuantos gramos pesa la impresion"));
-  console.log(`Esta impresion utiliza ${weightInGrams} gramos de material`);
+    //Selecciono Precio del Plastico por Kg -- se divide por 1000
+    let materialPricePerGram = document.getElementById("price");
+    console.log(`El material cuesta $${(materialPricePerGram.value)/1000} por gramo.`);  
 
-  // Selecciono costo por hora hombre
-  let labourCostInMinutes = parseInt(prompt("Ingrese costo mano de obra por Hora"))/60;
-  console.log(`La mano de obra es de $${labourCostInMinutes} por minuto`);
+    // Selecciono peso total de material usado
+    let weightInGrams = document.getElementById("weight")
+    console.log(`Esta impresion utiliza ${weightInGrams.value} gramos de material`);
 
-  // Selecciono porcentaje de impuestos
-  let taxes = parseInt(prompt("Ingrese % impuestos")) / 100 + 1;
-  console.log(`Los impuesto son del %${(taxes-1)*100}`);
+    // Selecciono costo por hora hombre -- se divide por 60 para tener minutos
+    let labourCostInMinutes = document.getElementById("labour");
+    console.log(`La mano de obra es de $${(labourCostInMinutes.value)/60} por minuto`);
 
-  // Selecciono margen de ganancia en %
-  let profitMarginPercent = parseInt(prompt("Ingrese margen de ganancia que desea en %")) / 100 + 1;
-  console.log(`El margen de ganancia sera del  %${(profitMarginPercent-1)*100}`);
+    // Selecciono porcentaje de impuestos
+    let taxes = document.getElementById("taxes");
+    console.log(`Los impuesto son del %${(taxes.value)/100+1}`);
 
-  console.log("Costo de energia sera de $" + printers[printerSelect].getEnergyCost(energyPriceInKwh, printTimeInMinutes));
+    // Selecciono margen de ganancia en % 
+    let profitMarginPercent = document.getElementById("profit");
+    console.log(`El margen de ganancia sera del  %${(profitMarginPercent.value)/100+1}`);
 
-  // Precio Final
-  let totalCost = calcTotalCost();
-  console.log("--> El costo Total sera de: $" + totalCost);
-  let finalPrice = calcFinalPrice(totalCost);
-  console.log("--> El precio final a cobrar por la impresion sera de: $" + finalPrice);
+    console.log("Costo de energia sera de $" + printers[printerSelect.value].getEnergyCost(energyPriceInKwh.value, printTimeInMinutes.value));
+    // Precio Final
+    let totalCost = calcTotalCost();
+    console.log("--> El costo Total sera de: $" + totalCost);
+    let finalPrice = calcFinalPrice(totalCost);
+    console.log("--> El precio final a cobrar por la impresion sera de: $" + finalPrice);
+  }
   

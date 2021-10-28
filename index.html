@@ -24,32 +24,34 @@
         </nav>
     </header>
     <section class="calculator">
-        <form class="form">
+        <form class="calcForm">
             <h2>Calcula tu impresion</h2>
-            <label for="printer">Elija impresora</label>
-            <input type="text" id="printer">
-            <label for="energy">Elija costo luz en kWh</label>
-            <input type="text" id="energy">
-            <label for="time">Elija duracion impresion</label>
-            <input type="text" id="time">
-            <label for="material">Elija precio material por Kg</label>
-            <input type="text" id="material">
+            <label for="printer">Elija impresora 0 = Ender 3   o  1 = Prusa Mk3</label>
+            <input type="text" id="printer" class="calcForm__item">
+            <label for="energy">Ingrese costo electricidad KWh Ej: 5000</label>
+            <input type="text" id="energy" class="calcForm__item">
+            <label for="time">Ingrese tiempo de impresion en Minutos</label>
+            <input type="text" id="time" class="calcForm__item">
+            <label for="price">Elija precio material por Kg</label>
+            <input type="text" id="price" class="calcForm__item">
             <label for="weight">Peso en gramos de la impresion</label>
-            <input type="text" id="weight">
+            <input type="text" id="weight" class="calcForm__item">
             <label for="labour">Elija mano obra por hora</label>
-            <input type="text" id="labour">
+            <input type="text" id="labour" class="calcForm__item">
             <label for="taxes">Porcentaje de impuestos</label>
-            <input type="text" id="taxes">
-            <label for="margin">Margen de ganancia %</label>
-            <input type="text" id="margin">
-            <input type="submit" class="form__item--btn">
+            <input type="text" id="taxes" class="calcForm__item">
+            <label for="profit">Margen de ganancia %</label>
+            <input type="text" id="profit" class="calcForm__item">
+            <br>
+            <button class="calcForm__item--btn" >Calcular</button>
+            
         </form>
     </section>
 
     <footer class="footer">
         <p>info footer</p>
     </footer>
-    <script src="/js/3dprintcalc.js"></script>
+    <script src="/js/calculator.js"></script>
 
 </body>
 </html>
