@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Work+Sans:300,600");
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }

@@ -26,26 +26,28 @@
     <section class="calculator">
         <form class="calcForm">
             <h2>Calcula tu impresion</h2>
-            <label for="printer">Elija impresora 0 = Ender 3   o  1 = Prusa Mk3</label>
-            <input type="text" id="printer" class="calcForm__item">
-            <label for="energy">Ingrese costo electricidad KWh Ej: 5000</label>
-            <input type="text" id="energy" class="calcForm__item">
-            <label for="time">Ingrese tiempo de impresion en Minutos</label>
-            <input type="text" id="time" class="calcForm__item">
-            <label for="price">Elija precio material por Kg</label>
-            <input type="text" id="price" class="calcForm__item">
-            <label for="weight">Peso en gramos de la impresion</label>
-            <input type="text" id="weight" class="calcForm__item">
-            <label for="labour">Elija mano obra por hora</label>
-            <input type="text" id="labour" class="calcForm__item">
+            <label for="printerSelect">Elija impresora 0 = Ender 3   o  1 = Prusa Mk3</label>
+            <input type="text" id="printerSelect" class="calcForm__item">
+            <label for="energyPriceInKwh">Ingrese costo electricidad KWh Ej: 5000</label>
+            <input type="text" id="energyPriceInKwh" class="calcForm__item">
+            <label for="printTimeInMinutes">Ingrese tiempo de impresion en Minutos</label>
+            <input type="text" id="printTimeInMinutes" class="calcForm__item">
+            <label for="materialPricePerGram">Elija precio material por Kg</label>
+            <input type="text" id="materialPricePerGram" class="calcForm__item">
+            <label for="weightInGrams">Peso en gramos de la impresion</label>
+            <input type="text" id="weightInGrams" class="calcForm__item">
+            <label for="labourCostInMinutes">Elija costo mano obra por hora</label>
+            <input type="text" id="labourCostInMinutes" class="calcForm__item">
             <label for="taxes">Porcentaje de impuestos</label>
             <input type="text" id="taxes" class="calcForm__item">
-            <label for="profit">Margen de ganancia %</label>
-            <input type="text" id="profit" class="calcForm__item">
+            <label for="profitMarginPercent">Margen de ganancia %</label>
+            <input type="text" id="profitMarginPercent" class="calcForm__item">
             <br>
-            <button class="calcForm__item--btn" >Calcular</button>
-            
+            <button class="calcForm__item--btn" >Calcular</button>            
         </form>
+        <div class="calcResult">
+            
+        </div>
     </section>
 
     <footer class="footer">
