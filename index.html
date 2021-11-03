@@ -1,59 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>3D Print Calculator</title>
-    <link rel="stylesheet" href="/css/main.css">
-</head>
-<body>
+    <link rel="stylesheet" href="/css/main.css" />
+  </head>
+  <body>
     <header>
-        <h1 class="logo">Logo</h1>
-        <input type="checkbox" class="nav-toggle" id="nav-toggle">
-        <label for="nav-toggle" class="nav-toggle-label">
-            <span></span>
-        </label>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
+      <img
+        src="/assets/img/iconoImpresion.svg"
+        alt="3d print symbol"
+        class="logo"
+      />
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
     </header>
     <section class="calculator">
-        <form class="calcForm">
-            <h2>Calcula tu impresion</h2>
-            <label for="printerSelect">Elija impresora 0 = Ender 3   o  1 = Prusa Mk3</label>
-            <input type="text" id="printerSelect" class="calcForm__item">
-            <label for="energyPriceInKwh">Ingrese costo electricidad KWh Ej: 5000</label>
-            <input type="text" id="energyPriceInKwh" class="calcForm__item">
-            <label for="printTimeInMinutes">Ingrese tiempo de impresion en Minutos</label>
-            <input type="text" id="printTimeInMinutes" class="calcForm__item">
-            <label for="materialPricePerGram">Elija precio material por Kg</label>
-            <input type="text" id="materialPricePerGram" class="calcForm__item">
-            <label for="weightInGrams">Peso en gramos de la impresion</label>
-            <input type="text" id="weightInGrams" class="calcForm__item">
-            <label for="labourCostInMinutes">Elija costo mano obra por hora</label>
-            <input type="text" id="labourCostInMinutes" class="calcForm__item">
-            <label for="taxes">Porcentaje de impuestos</label>
-            <input type="text" id="taxes" class="calcForm__item">
-            <label for="profitMarginPercent">Margen de ganancia %</label>
-            <input type="text" id="profitMarginPercent" class="calcForm__item">
-            <br>
-            <button class="calcForm__item--btn" >Calcular</button>            
-        </form>
-        <div class="calcResult">
-            
-        </div>
+      <form class="calcForm">
+        <h1>Calcula tu impresion</h1>
+        <label for="printerSelect"
+          >Elija impresora 0 = Ender 3 o 1 = Prusa Mk3</label
+        >
+        <input
+          type="text"
+          id="printerSelect"
+          class="calcForm__item"
+          placeholder="0"
+        />
+        <label for="energyPriceInKwh">$ Electricidad KWh</label>
+        <input
+          type="text"
+          id="energyPriceInKwh"
+          class="calcForm__item"
+          placeholder="5000"
+        />
+        <label for="printTimeInMinutes">Tiempo de impresion (minutos)</label>
+        <input
+          type="text"
+          id="printTimeInMinutes"
+          class="calcForm__item"
+          placeholder="60"
+        />
+        <label for="materialPricePerGram">$ material por Kg</label>
+        <input
+          type="text"
+          id="materialPricePerGram"
+          class="calcForm__item"
+          placeholder="3000"
+        />
+        <label for="weightInGrams">Peso de impresion (.grs)</label>
+        <input
+          type="text"
+          id="weightInGrams"
+          class="calcForm__item"
+          placeholder="20"
+        />
+        <label for="labourCostInMinutes">$ mano de obra por hora</label>
+        <input
+          type="text"
+          id="labourCostInMinutes"
+          class="calcForm__item"
+          placeholder="250"
+        />
+        <label for="taxes">% Impuestos</label>
+        <input type="text" id="taxes" class="calcForm__item" placeholder="21" />
+        <label for="profitMarginPercent">% Margen Ganancia</label>
+        <input
+          type="text"
+          id="profitMarginPercent"
+          class="calcForm__item"
+          placeholder="15"
+        />
+        <br />
+        <button class="calcForm__item--btn">CALCULAR</button>
+      </form>
     </section>
+    <section class="calcResult"></section>
 
     <footer class="footer">
-        <p>info footer</p>
+      <p>©2021 Rodrigo Blejman</p>
     </footer>
     <script src="/js/calculator.js"></script>
-
-</body>
+  </body>
 </html>
