@@ -90,25 +90,62 @@ header ul li a {
   text-align: center;
 }
 
-.calcResult {
+.calcForm label {
+  padding-top: 0.5em;
+  padding-bottom: 0.1em;
+}
+
+.calcForm input {
+  border: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  padding: 0.2em;
+  border-radius: 0.2em;
+  outline-color: #2f2f2f;
+  height: 2em;
+}
+
+.result {
   background-color: rgba(255, 255, 255, 0.2);
   color: white;
   border-radius: 1%;
   padding: 2em 2em 2em;
   margin-top: 1em;
   max-width: 37em;
+  display: none;
+  text-align: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.calcResult__inPuts {
+.result__inPuts {
   list-style: none;
-  font-size: 0.8em;
+  font-size: 0.7em;
   border-bottom: 1px solid white;
   padding-bottom: 1.2em;
 }
 
-.calcResult__outPuts {
+.result__outPuts {
   list-style: none;
+}
+
+.result__inputs-right,
+.result__outPuts-right {
+  opacity: 0.8;
+}
+
+.result__outPuts-finalPrice {
   font-size: 1.2em;
+  margin-top: 5em;
 }
 
 .calcForm__item--btn {

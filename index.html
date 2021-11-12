@@ -5,7 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>3D Print Calculator</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="css/main.css" />
   </head>
   <body>
@@ -26,16 +30,14 @@
     <section class="calculator">
       <form class="calcForm">
         <h1>Calcula tu impresion</h1>
-        <label for="printerSelect"
-          >Impresora</label
-        >
-        <select  id="printerSelect" class="calcForm__item">
+        <label for="printerSelect">Impresora</label>
+        <select id="printerSelect" class="calcForm__item">
           <option value="0">Ender 3</option>
           <option value="1">Prusa MK3</option>
           <option value="2">Prusa SL1</option>
           <option value="3">Makerbot Replicator+</option>
         </select>
-        
+
         <label for="energyPriceInKwh">$ Electricidad KWh</label>
         <input
           type="text"
@@ -81,10 +83,10 @@
           placeholder="15"
         />
         <br />
-        <input type="submit" value="Submit" class="calcForm__item--btn" >
+        <input type="submit" value="Submit" class="calcForm__item--btn" />
       </form>
     </section>
-    <section class="calcResult"></section>
+    <section class="result"></section>
 
     <footer class="footer">
       <p>©2021 Rodrigo Blejman</p>

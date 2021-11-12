@@ -49,25 +49,53 @@ header {
     margin-top: 0;
     text-align: center;
   }
+
+  label {
+    padding-top: 0.5em;
+    padding-bottom: 0.1em;
+  }
+  input {
+    border: none;
+    appearance: none;
+    padding: 0.2em;
+    border-radius: 0.2em;
+    outline-color: $color-secondary;
+    height: 2em;
+  }
 }
-.calcResult {
+
+.result {
   background-color: $background-secondary;
   color: $color-primary;
   border-radius: 1%;
   padding: 2em 2em 2em;
   margin-top: 1em;
   max-width: 37em;
+  display: none;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.calcResult__inPuts {
+
+.result__inPuts {
   list-style: none;
-  font-size: 0.8em;
+  font-size: 0.7em;
   border-bottom: 1px solid white;
   padding-bottom: 1.2em;
 }
 
-.calcResult__outPuts {
+.result__outPuts {
   list-style: none;
+}
+
+.result__inputs-right,
+.result__outPuts-right {
+  opacity: 0.8;
+}
+.result__outPuts-finalPrice {
   font-size: 1.2em;
+  margin-top: 5em;
 }
 
 .calcForm__item--btn {
