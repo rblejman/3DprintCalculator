@@ -127,6 +127,8 @@ $(".calcForm").submit((e) => {
   );
 });
 
+//agregar ajax
+
 // function showResult() {
 //   let result = document.querySelector(".calcResult");
 //   result.innerHTML = `
