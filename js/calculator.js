@@ -149,7 +149,7 @@ function showGeo(position) {
     },
     success: function (data) {
       console.log(data);
-      let content = `<P> ${data.main.temp.toFixed(1)}°C, ${data.name}</P>`;
+      let content = `<P> ${data.main.temp.toFixed(1)}°C ${data.name}</P>`;
       $(".location").append(content);
     },
   });

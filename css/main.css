@@ -56,12 +56,22 @@ header ul li a {
   max-height: 2.5em;
 }
 
+.location {
+  text-align: right;
+}
+
+.location p {
+  font-family: "Varela Round", sans-serif;
+  color: white;
+  font-size: 0.7rem;
+  margin: 0;
+}
+
 .calculator {
   background-color: rgba(255, 255, 255, 0.2);
   color: white;
   border-radius: 1%;
   padding: 2em 2em 2em;
-  margin-top: 1em;
   max-width: 37em;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -100,6 +110,14 @@ header ul li a {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
+  padding: 0.2em;
+  border-radius: 0.2em;
+  outline-color: #2f2f2f;
+  height: 2em;
+}
+
+.calcForm select {
+  border: none;
   padding: 0.2em;
   border-radius: 0.2em;
   outline-color: #2f2f2f;
