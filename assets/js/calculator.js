@@ -126,3 +126,30 @@ $(".calcForm").submit((e) => {
     profitMarginPercent
   );
 });
+
+let geoLoc = navigator.geolocation.getCurrentPosition(showGeo);
+
+function showGeo(position) {
+  console.log("lat: " + position.coords.latitude);
+  console.log("long: " + position.coords.longitude);
+  let latitude = position.coords.latitude;
+  let longitude = position.coords.longitude;
+
+  $.ajax({
+    url: "http://api.openweathermap.org/data/2.5/weather",
+    type: "GET",
+    data: {
+      lat: latitude,
+      lon: longitude,
+      appid: "055793c49910b77c7527169cfb44bd4f",
+      dataType: "jsonp",
+      units: "metric",
+      lang: "sp",
+    },
+    success: function (data) {
+      console.log(data);
+      let content = `<P> ${data.main.temp.toFixed(1)}°C ${data.name}</P>`;
+      $(".location").append(content);
+    },
+  });
+}
