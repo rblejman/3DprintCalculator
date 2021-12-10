@@ -14,7 +14,6 @@ function calcPrint(
   let totalCost = (energyCost + materialCost + labourCost) * (taxes / 100 + 1);
   let finalPrice = totalCost * (profit / 100 + 1);
 
-  $(".result").html("");
   $(".result")
     .html(
       `
