@@ -114,18 +114,35 @@ $(".calcForm").submit((e) => {
   let taxes = parseInt($("#taxes").val());
   let profitMarginPercent = parseInt($("#profitMarginPercent").val());
 
-  calcPrint(
-    printerConsumption,
-    energyPriceInKwh,
-    printTimeInMinutes,
-    materialPricePerGram,
-    weightInGrams,
-    labourCostInMinutes,
-    taxes,
-    profitMarginPercent
-  );
+  if (
+    energyPriceInKwh == 0 ||
+    printTimeInMinutes == 0 ||
+    materialPricePerGram == 0 ||
+    weightInGrams == 0 ||
+    labourCostInMinutes == 0 ||
+    taxes == 0 ||
+    profitMarginPercent == 0
+  ) {
+    console.log("Un numero es igual a 0, vuelva a intentar");
+    //Bounce animation
+    $(".result").hide();
+    $(".error").show();
+  } else {
+    $(".error").hide();
+    calcPrint(
+      printerConsumption,
+      energyPriceInKwh,
+      printTimeInMinutes,
+      materialPricePerGram,
+      weightInGrams,
+      labourCostInMinutes,
+      taxes,
+      profitMarginPercent
+    );
+  }
 });
 
+/* Geolocalization with AJAX*/
 let geoLoc = navigator.geolocation.getCurrentPosition(showGeo);
 
 function showGeo(position) {

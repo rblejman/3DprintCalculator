@@ -80,6 +80,12 @@ header {
   }
 }
 
+.error {
+  color: rgb(131, 16, 16);
+  font-size: 0.9em;
+  text-align: center;
+  display: none;
+}
 .result {
   background-color: $background-secondary;
   color: $color-primary;

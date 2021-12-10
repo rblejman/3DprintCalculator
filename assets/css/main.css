@@ -124,6 +124,13 @@ header ul li a {
   height: 2em;
 }
 
+.error {
+  color: #831010;
+  font-size: 0.9em;
+  text-align: center;
+  display: none;
+}
+
 .result {
   background-color: rgba(255, 255, 255, 0.2);
   color: white;
