@@ -141,7 +141,15 @@ $(".calcForm").submit((e) => {
     );
   }
 });
+/* Sliders*/
+var sliderTaxes = document.getElementById("#taxes");
+var outputTaxes = document.getElementById("#outputTaxes");
+outputTaxes.innerHTML = sliderTaxes.value; // Display the default slider value
 
+// Update the current slider value (each time you drag the slider handle)
+sliderTaxes.oninput = function () {
+  outputTaxes.innerHTML = this.value;
+};
 /* Geolocalization with AJAX*/
 let geoLoc = navigator.geolocation.getCurrentPosition(showGeo);
 

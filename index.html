@@ -71,14 +71,33 @@
           placeholder="250"
         />
         <label for="taxes">% Impuestos</label>
-        <input type="text" id="taxes" class="calcForm__item" placeholder="21" />
+        <div class="slider">
+          <input
+            type="range"
+            name=""
+            id="taxes"
+            class=""
+            min="0"
+            max="100"
+            value="21"
+          />
+          <p class="value" id="sliderTaxes">100</p>
+        </div>
+
         <label for="profitMarginPercent">% Margen Ganancia</label>
-        <input
-          type="text"
-          id="profitMarginPercent"
-          class="calcForm__item"
-          placeholder="15"
-        />
+        <div class="slider">
+          <input
+            type="range"
+            name=""
+            id="profitMarginPercent"
+            class=""
+            min="0"
+            max="100"
+            value="10"
+          />
+          <p class="value" id="sliderProfit">100</p>
+        </div>
+
         <br />
         <input type="submit" value="Submit" class="calcForm__item--btn" />
       </form>
